@@ -1,8 +1,0 @@
-@import url('RobotoMono.ttf');
-body {
-	text-align: center;
-	font-family: 'Roboto Mono', monospace;
-}
-#reset {
-	color: rgb(255, 0, 0);
-}
