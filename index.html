@@ -46,8 +46,8 @@
 <body>
 	<div id="clock">0:00:00 AM</div>
 	<div class="search-container">
-		<input id="search" type="text" placeholder="Search something..." aria-live="polite">
-		<button onclick="location.href = 'https://www.google.com/search?q=' + document.getElementById('search').value"><i class="fa fa-search"></i></button>
+		<input id="search" type="text" placeholder="Type an URL or Search something..." aria-live="polite">
+		<button onclick="check('search')"><i class="fa fa-search"></i></button>
 	</div>
 	<script type="text/javascript">
 		setInterval(showTime, 0);
@@ -60,6 +60,14 @@
 			sec = sec < 10 ? "0" + sec : sec;
 			let currentTime = hour + ":" + min + ":" + sec;
 			document.getElementById("clock").innerHTML = currentTime;
+		}
+		function check(element) {
+			let txt = document.getElementById(element).value;
+			if (txt.includes('https://')) {
+				location.href = txt;
+			} else {
+				location.href = 'https://www.google.com/search?q=' + txt;
+			}
 		}
 	</script>
 </body>
